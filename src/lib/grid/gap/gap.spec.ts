@@ -105,7 +105,8 @@ describe('grid gap directive', () => {
           'grid-column-gap': '15px',
         }, styler);
       } else {
-        expectNativeEl(fixture).toHaveStyle({
+        fixture.detectChanges();
+        expectNativeEl(fixture).toHaveCSS({
           'display': 'grid',
           'grid-gap': '10px 15px',
         }, styler);
