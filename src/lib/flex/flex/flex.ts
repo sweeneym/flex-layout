@@ -274,8 +274,8 @@ export class FlexDirective extends BaseDirective implements OnInit, OnChanges, O
       }
     }
 
-    // Fix for issues 277 and 534
-    if (basis !== '0%') {
+    // Fix for issues 277, 534, and 728
+    if (basis !== '0%' && basis !== '0px' && basis !== 'auto') {
       css[min] = isFixed || (isPx && grow) ? basis : null;
       css[max] = isFixed || (!usingCalc && shrink) ? basis : null;
     }
